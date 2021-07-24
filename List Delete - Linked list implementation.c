@@ -52,6 +52,26 @@ void deleteAtLast(struct Node **head){
     }
 }
 void deleteAtMiddle(struct Node **head,int pos){
+    if(*head==NULL){
+        printf("List is empty\n");
+    }
+    else if(pos==1){
+        struct Node *temp=*head;
+        *head=(*head)->next;
+        free(temp);
+    }
+    else{
+        int c=1;
+        struct Node *temp=*head;
+        while(temp->next!=NULL){
+            if(c==pos-1){
+                temp->next=temp->next->next;
+                break;
+            }
+            c++;
+            temp=temp->next;
+        }
+    }
     
 }
 void display(struct Node *head){
