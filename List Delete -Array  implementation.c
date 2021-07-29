@@ -32,7 +32,7 @@ int deleteAtMiddle(int p){
     {
         printf("Array Empty");
         return 0 ;
-    }
+    } 
     if(p>size)
     {
         printf("Array size less than position\n");
