@@ -65,8 +65,13 @@ void deleteAtMiddle(int pos){
         int c=1;
         while(temp!=NULL){
             if(c==pos){
+                if(temp->next==NULL){
+                    deleteAtLast();
+                }
+                else{
                temp->next->prev=temp->prev;
                temp->prev->next=temp->next;
+                }
                 break;
             }
             c++;
