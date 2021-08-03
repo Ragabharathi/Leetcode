@@ -55,6 +55,10 @@ void insertAtMiddle(int data,int pos){
             count++;
             temp=temp->next;
         }
+        if(count==pos-1){
+        temp->next=newNode;
+        newNode->prev=temp;
+        }
     }
     
 }
