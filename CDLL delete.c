@@ -66,7 +66,7 @@ void deleteAtMiddle(int pos){
     else{
         struct Node*temp=head;
         int c=1;
-        while(temp!=head){
+        while(temp->next!=head){
             if(c==pos){
                 if(temp->next==head){
                     deleteAtLast();
@@ -80,7 +80,8 @@ void deleteAtMiddle(int pos){
             c++;
             temp=temp->next;
         }
-        
+        if(c==pos){
+deleteAtLast();
     }
 }
 void display(){
