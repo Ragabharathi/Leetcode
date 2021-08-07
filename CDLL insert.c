@@ -32,7 +32,7 @@ void insertAtLast(int data){
        tail->next=newNode;
        newNode->prev=tail;
        tail=newNode;
-    }
+    } 
     tail->next=head;
 }
 void insertAtMiddle(int data,int pos){
