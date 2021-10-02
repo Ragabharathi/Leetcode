@@ -1,0 +1,51 @@
+input
+((40)20)((((39)56)29)
+output
+39
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char s[101];
+    int bracket=0;
+    int arr[100],ind=0,b[100];
+    scanf("%s\n",s);
+    int num=0;
+    if(strlen(s)==1)
+    {
+        printf("%s",s);
+        exit(0);
+    }
+    for(int i=0;i<strlen(s);i++)
+    {
+        if(s[i]=='(')
+        bracket++;
+        else if(s[i]==')')
+        bracket--;
+        else if(isdigit(s[i]))
+        num=num*10+(s[i]-'0');
+        if(isdigit(s[i]) && !isdigit(s[i+1]))
+        {
+            arr[ind]=num;
+            b[ind]=bracket;
+            num=0;ind++;
+        }
+    }
+    int maxdepth=0,number=arr[0];
+    for(int i=0;i<ind;i++)
+    {
+        if(maxdepth<b[i])
+        {
+            maxdepth=b[i];
+            number=arr[i];
+        }
+        else if(maxdepth==b[i])
+        {
+            if(number<arr[i])
+            number=arr[i];
+        }
+    }
+    printf("%d",number);
+
+}
